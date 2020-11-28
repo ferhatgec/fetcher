@@ -8,6 +8,7 @@
 # </
 
 main() -> main {
+	/> Define variables </
 	var(string) -> (func) spec -> "__OS_NAME__" (end) -> fetcher_os_name <-
 	var(string) -> (func) spec -> "__USERNAME__" (end) -> fetcher_username <-
 	var(string) -> (func) spec -> "__HOSTNAME__" (end) -> fetcher_hostname <-
@@ -16,10 +17,12 @@ main() -> main {
 	var(string) -> (func) getenv -> "SHELL" (end) -> fetcher_desktop <-
 	var(string) -> (func) getenv -> "TERM" (end) -> fetcher_terminal <-
 	
+	/> Define 3 colors </
 	var(string) -> \033[0;31m -> red <-
 	var(string) -> \033[0;33m -> yellow <-
 	var(string) -> \033[0;93m -> light_yellow <-
 	
+	/> Tux, mascot </
 	var(string) -> (tux) {
     {red} .--.     {yellow}{fetcher_username}{red}@{yellow}{fetcher_hostname}
     {red}|o_o |    --------------
@@ -30,9 +33,14 @@ main() -> main {
  {red}\___)=(___/  {light_yellow}Term: {yellow}{fetcher_terminal}
 	} -> tux <-
 	
-	@escape_seq -> tux <
+	/> Parse colors (without escape sequence), variables </
 	@escape_seq -> tux <
 	
+	/> Parse colors (with escape sequence </
+	@escape_seq -> tux <
+	
+	/> Print tux variable </
 	@echo -> tux <-
+	
 	print(newline)
 } main;
