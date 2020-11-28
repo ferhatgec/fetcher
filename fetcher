@@ -1,0 +1,36 @@
+/> MIT License
+#
+# Copyright (c) 2020 Ferhat Geçdoğan All Rights Reserved.
+# Distributed under the terms of the MIT License.
+#
+# </
+
+main() -> main {
+	var(string) -> (func) spec -> "__OS_NAME__" (end) -> fetcher_os_name <-
+	var(string) -> (func) spec -> "__USERNAME__" (end) -> fetcher_username <-
+	var(string) -> (func) spec -> "__HOSTNAME__" (end) -> fetcher_hostname <-
+	var(string) -> (func) spec -> "__UPTIME__" (end) -> fetcher_uptime <-
+	var(string) -> (func) spec -> "__KERNEL__" (end) -> fetcher_kernel <-
+	var(string) -> (func) getenv -> "SHELL" (end) -> fetcher_desktop <-
+	var(string) -> (func) getenv -> "TERM" (end) -> fetcher_terminal <-
+	
+	var(string) -> \033[0;31m -> red <-
+	var(string) -> \033[0;33m -> yellow <-
+	var(string) -> \033[0;93m -> light_yellow <-
+	
+	var(string) -> (tux) {
+    {red} .--.     {yellow}{fetcher_username}{red}@{yellow}{fetcher_hostname}
+    {red}|o_o |    --------------
+    {red}|:_/ |    {light_yellow}OS Name: {yellow}{fetcher_os_name}
+   {red}//   \ \   {light_yellow}Uptime: {yellow}{fetcher_uptime}
+  {red}(|     | )  {light_yellow}Kernel: {yellow}{fetcher_kernel}
+ {red}/'\_   _/`\  {light_yellow}Shell: {yellow}{fetcher_desktop}
+ {red}\___)=(___/  {light_yellow}Term: {yellow}{fetcher_terminal}
+	} -> tux <-
+	
+	@escape_seq -> tux <
+	@escape_seq -> tux <
+	
+	@echo -> tux <-
+	print(newline)
+} main;
