@@ -21,6 +21,7 @@ main() -> main {
 	var(string) -> \033[0;31m -> red <-
 	var(string) -> \033[0;33m -> yellow <-
 	var(string) -> \033[0;93m -> light_yellow <-
+	var(string) -> \033[0m -> reset <-
 	
 	/> Tux, mascot </
 	var(string) -> (tux) {
@@ -30,7 +31,7 @@ main() -> main {
    {red}//   \ \   {light_yellow}Uptime: {yellow}{fetcher_uptime}
   {red}(|     | )  {light_yellow}Kernel: {yellow}{fetcher_kernel}
  {red}/'\_   _/`\  {light_yellow}Shell: {yellow}{fetcher_desktop}
- {red}\___)=(___/  {light_yellow}Term: {yellow}{fetcher_terminal}
+ {red}\___)=(___/  {light_yellow}Term: {yellow}{fetcher_terminal}{reset}
 	} -> tux <-
 	
 	/> Parse colors (without escape sequence), variables </
