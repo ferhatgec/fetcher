@@ -28,10 +28,10 @@ main() -> main {
     {red} .--.     {yellow}{fetcher_username}{red}@{yellow}{fetcher_hostname}
     {red}|o_o |    --------------
     {red}|:_/ |    {light_yellow}OS Name: {yellow}{fetcher_os_name}
-   {red}//   \ \   {light_yellow}Uptime: {yellow}{fetcher_uptime}
-  {red}(|     | )  {light_yellow}Kernel: {yellow}{fetcher_kernel}
- {red}/'\_   _/`\  {light_yellow}Shell: {yellow}{fetcher_desktop}
- {red}\___)=(___/  {light_yellow}Term: {yellow}{fetcher_terminal}{reset}
+   {red}//   \ \   {light_yellow}Uptime:  {yellow}{fetcher_uptime}
+  {red}(|     | )  {light_yellow}Kernel:  {yellow}{fetcher_kernel}
+ {red}/'\_   _/`\  {light_yellow}Shell:   {yellow}{fetcher_desktop}
+ {red}\___)=(___/  {light_yellow}Term:    {yellow}{fetcher_terminal}{reset}
 	} -> tux <-
 	
 	/> Parse colors (without escape sequence), variables </
