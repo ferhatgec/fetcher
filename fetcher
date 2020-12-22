@@ -18,10 +18,30 @@ main() -> main {
 	var(string) -> (func) getenv -> "TERM" (end) -> fetcher_terminal <-
 	
 	/> Define 3 colors </
+	var(string) -> \033[0;30m -> black <-
 	var(string) -> \033[0;31m -> red <-
+	var(string) -> \033[0;32m -> green <-
 	var(string) -> \033[0;33m -> yellow <-
+	var(string) -> \033[0;34m -> blue <-
+	var(string) -> \033[0;35m -> magenta <-
+	var(string) -> \033[0;36m -> cyan <-
+	var(string) -> \033[0;37m -> white <-
+	
+	var(string) -> \033[0;90m -> light_black <-
+	var(string) -> \033[0;91m -> light_red <-
+	var(string) -> \033[0;92m -> light_green <-
 	var(string) -> \033[0;93m -> light_yellow <-
+	var(string) -> \033[0;94m -> light_blue <-
+	var(string) -> \033[0;95m -> light_magenta <-
+	var(string) -> \033[0;96m -> light_cyan <-
+	var(string) -> \033[0;97m -> light_white <-
+	
 	var(string) -> \033[0m -> reset <-
+		
+	/> 16bit colors </
+	var(string) -> (16bit_colors) {
+              {light_black}███{light_red}███{light_green}███{light_yellow}███{light_blue}███{light_magenta}███{light_cyan}███{light_white}███
+	} -> 16bit_colors <-
 	
 	/> Tux, mascot </
 	var(string) -> (tux) {
@@ -32,7 +52,7 @@ main() -> main {
   {red}(|     | )  {light_yellow}Kernel:  {yellow}{fetcher_kernel}
  {red}/'\_   _/`\  {light_yellow}Shell:   {yellow}{fetcher_desktop}
  {red}\___)=(___/  {light_yellow}Term:    {yellow}{fetcher_terminal}{reset}
-	} -> tux <-
+                                          {16bit_colors}} -> tux <-
 	
 	/> Parse colors (without escape sequence), variables </
 	@escape_seq -> tux <
